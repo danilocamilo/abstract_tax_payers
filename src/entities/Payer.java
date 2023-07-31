@@ -24,7 +24,7 @@ public abstract class Payer {
 		return anualIncome;
 	}
 	
-	public abstract Double totalTax();
+	public abstract double totalTax();
 	
 	
 	

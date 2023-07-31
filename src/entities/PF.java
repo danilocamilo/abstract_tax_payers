@@ -21,13 +21,16 @@ public class PF extends Payer{
 	}
 
 	@Override
-	public Double totalTax() {
+	public double totalTax() {
 		double totalTax = 0;
 		if (getAnualIncome() < 20000.00) {
 			totalTax = getAnualIncome() * 0.15 - healthExpenses * 0.50;
 		}
 		if (getAnualIncome() >= 20000.00) {
 			totalTax = getAnualIncome() * 0.25 - healthExpenses * 0.50;
+		}
+		if(totalTax < 0.0) {
+			totalTax = 0.0;
 		}
 		return totalTax;
 		

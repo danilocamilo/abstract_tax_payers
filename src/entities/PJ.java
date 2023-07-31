@@ -1,8 +1,8 @@
 package entities;
 
-public class PJ extends Payer{
+public class PJ extends Payer {
 	private int employeesNumber;
-	
+
 	public PJ() {
 	}
 
@@ -20,16 +20,12 @@ public class PJ extends Payer{
 	}
 
 	@Override
-	public Double totalTax() {
-		double totalTax = 0;
-		if(employeesNumber > 10) {
-			totalTax = getAnualIncome() * 0.14;
+	public double totalTax() {
+		if (employeesNumber > 10) {
+			return getAnualIncome() * 0.14;
+		} else {
+			return getAnualIncome() * 0.16;
 		}
-		else {
-			totalTax = getAnualIncome() * 0.16;
-		}
-		return totalTax;
 	}
-	
-	
+
 }
